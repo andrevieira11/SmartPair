@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { Avatar } from "@/components/Avatar";
 import { IconArrow, IconBolt, IconBook, IconChat, IconFlame, IconStar, IconTrophy, IconVideo } from "@/components/Icon";
@@ -27,6 +28,7 @@ export default function StudentHome() {
           className="group block rounded-3xl p-6 sm:p-8 bg-brand-gradient text-white relative overflow-hidden"
         >
           <div className="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-white/10 blur-2xl" aria-hidden />
+          <img src="/logo.png" alt="" aria-hidden className="absolute -right-6 -bottom-6 w-44 h-44 opacity-15 pointer-events-none" />
           <div className="text-sm opacity-80">Stuck on something right now?</div>
           <div className="mt-1 text-3xl sm:text-4xl font-bold">Find a tutor in &lt;1 min</div>
           <div className="mt-4 flex items-center gap-3">

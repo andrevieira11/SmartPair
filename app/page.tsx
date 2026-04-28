@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import { Logo, LogoMark } from "@/components/Logo";
 import { IconBolt, IconBook, IconChat, IconTrophy, IconVideo, IconArrow, IconSparkles, IconStar } from "@/components/Icon";
 
 export default function Home() {
@@ -141,8 +142,8 @@ function HeroPhone() {
                 <span className="absolute inset-0 rounded-full bg-white/30 pulse-ring" />
                 <span className="absolute inset-0 rounded-full bg-white/20 pulse-ring" style={{ animationDelay: "0.4s" }} />
                 <span className="absolute inset-0 rounded-full bg-white/10 pulse-ring" style={{ animationDelay: "0.8s" }} />
-                <div className="relative w-28 h-28 rounded-full bg-white/20 backdrop-blur flex items-center justify-center ring-4 ring-white/30">
-                  <span className="text-4xl">🎓</span>
+                <div className="relative w-28 h-28 rounded-full bg-white/95 backdrop-blur flex items-center justify-center ring-4 ring-white/30 shadow-xl">
+                  <LogoMark size={72} />
                 </div>
               </div>
             </div>

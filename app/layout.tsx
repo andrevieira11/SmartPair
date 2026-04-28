@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     "SmartPair matches students with tutors in under a minute. Video classes, per-minute pricing, free daily lessons, notes, past exams, and communities.",
   applicationName: "SmartPair",
   appleWebApp: { capable: true, title: "SmartPair", statusBarStyle: "default" },
-  icons: { icon: "/favicon.ico" },
 };
 
 export const viewport: Viewport = {

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { IconArrow } from "@/components/Icon";
@@ -10,6 +11,11 @@ export default function RolePage() {
       </header>
       <main className="flex-1 flex items-center justify-center px-5 py-10">
         <div className="w-full max-w-3xl">
+          <div className="flex justify-center mb-5">
+            <div className="w-20 h-20 rounded-3xl bg-brand-soft flex items-center justify-center">
+              <img src="/logo.png" alt="" width={56} height={56} className="object-contain" />
+            </div>
+          </div>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-center">Who are you today?</h1>
           <p className="mt-2 text-center text-zinc-600 dark:text-zinc-300">Pick a role to explore the demo. All data is mocked.</p>
           <div className="mt-10 grid sm:grid-cols-2 gap-4">

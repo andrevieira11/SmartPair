@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Avatar } from "@/components/Avatar";
+import { LogoMark } from "@/components/Logo";
 import { IconClose, IconStar } from "@/components/Icon";
 import { TEACHERS, getTeacherById, type Subject } from "@/lib/mock";
 
@@ -51,6 +52,10 @@ function MatchingInner() {
 
   return (
     <div className="fixed inset-0 bg-brand-gradient text-white z-40 flex flex-col">
+      <div className="absolute top-5 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/15 backdrop-blur rounded-full px-3 py-1.5">
+        <LogoMark size={20} />
+        <span className="text-xs font-semibold tracking-tight">SmartPair</span>
+      </div>
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
         <div className="relative">
           <span className="absolute inset-0 rounded-full bg-white/25 pulse-ring" />
