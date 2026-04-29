@@ -94,7 +94,7 @@ export default function StudentHome() {
               </div>
               <div className="flex items-center justify-between text-xs">
                 <span className="inline-flex items-center gap-1"><IconStar size={13} className="text-amber-500" /> {t.rating}</span>
-                <span>${t.pricePerMin.toFixed(2)}/min</span>
+                <span>€{t.pricePerMin.toFixed(2)}/min</span>
               </div>
             </Link>
           ))}

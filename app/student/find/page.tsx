@@ -111,7 +111,7 @@ function FindInner() {
                       <span key={b} className="rounded-full bg-brand-soft text-brand text-[10px] px-2 py-0.5">{b}</span>
                     ))}
                   </div>
-                  <div className="text-sm font-semibold">${t.pricePerMin.toFixed(2)}<span className="text-xs text-zinc-500">/min</span></div>
+                  <div className="text-sm font-semibold">€{t.pricePerMin.toFixed(2)}<span className="text-xs text-zinc-500">/min</span></div>
                 </div>
               </div>
             </Link>

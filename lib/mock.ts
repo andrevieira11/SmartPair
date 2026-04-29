@@ -307,7 +307,7 @@ export function getTeacherById(id: string): Teacher | undefined {
 }
 
 export function formatMoney(cents: number): string {
-  return `$${(cents / 100).toFixed(2)}`;
+  return `€${(cents / 100).toFixed(2)}`;
 }
 
 export function formatMinutes(m: number): string {

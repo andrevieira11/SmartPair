@@ -58,7 +58,7 @@ function StudentSessionInner({ params }: { params: Promise<{ id: string }> }) {
             <Row k="Topic" v={`${subject} — ${topic}`} />
             <Row k="Free minutes used" v={`${Math.floor(usedFree / 60)} min`} />
             <Row k="Billed minutes" v={`${Math.ceil(billedSecs / 60)} min`} />
-            <Row k="Cost" v={`$${(costCents / 100).toFixed(2)}`} />
+            <Row k="Cost" v={`€${(costCents / 100).toFixed(2)}`} />
             <Row k="Points earned" v={`+${pointsEarned} 🎉`} highlight />
           </div>
 
@@ -121,7 +121,7 @@ function StudentSessionInner({ params }: { params: Promise<{ id: string }> }) {
         {/* Cost hud */}
         <div className="absolute top-3 right-3 bg-black/60 backdrop-blur rounded-xl px-3 py-2 text-xs text-right">
           <div>Free left: <b>{Math.max(0, STUDENT.freeMinutesLeftToday - Math.floor(secs / 60))} min</b></div>
-          <div className="opacity-80">Billed: ${(costCents / 100).toFixed(2)}</div>
+          <div className="opacity-80">Billed: €{(costCents / 100).toFixed(2)}</div>
         </div>
       </div>
 

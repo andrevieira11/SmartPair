@@ -20,7 +20,7 @@ export default function StudentProfile() {
       </section>
 
       <section className="grid sm:grid-cols-2 gap-3">
-        <RowLink href="/student/plans" label="Plans & billing" hint="Plus · $9.9/mo" />
+        <RowLink href="/student/plans" label="Plans & billing" hint="Plus · €9.90/mo" />
         <RowLink href="/student/rewards" label="Rewards & achievements" hint={`${STUDENT.points} pts`} />
         <RowLink href="/role" label="Switch role" hint="Student ↔ Teacher" />
         <RowLink href="/" label="Sign out (demo)" hint="" />

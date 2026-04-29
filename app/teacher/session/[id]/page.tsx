@@ -50,7 +50,7 @@ function TeacherSessionInner({ params }: { params: Promise<{ id: string }> }) {
             <Row k="Subject" v={subject} />
             <Row k="Topic" v={topic} />
             <Row k="Duration" v={`${mm}:${ss}`} />
-            <Row k="You earned" v={`$${(earnedCents / 100).toFixed(2)}`} highlight />
+            <Row k="You earned" v={`€${(earnedCents / 100).toFixed(2)}`} highlight />
           </div>
           <div className="mt-6 flex flex-col gap-2">
             <Link href="/teacher" className="rounded-full bg-foreground text-background py-2.5 font-medium">Back to requests</Link>
@@ -92,8 +92,8 @@ function TeacherSessionInner({ params }: { params: Promise<{ id: string }> }) {
           <div className="absolute bottom-1 left-1 text-[10px] bg-black/60 rounded px-1">You (tutor)</div>
         </div>
         <div className="absolute top-3 right-3 bg-black/60 backdrop-blur rounded-xl px-3 py-2 text-xs text-right">
-          <div>Earning: <b>${(earnedCents / 100).toFixed(2)}</b></div>
-          <div className="opacity-80">Rate ${TEACHER_ME.pricePerMin.toFixed(2)}/min</div>
+          <div>Earning: <b>€{(earnedCents / 100).toFixed(2)}</b></div>
+          <div className="opacity-80">Rate €{TEACHER_ME.pricePerMin.toFixed(2)}/min</div>
         </div>
       </div>
 

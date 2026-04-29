@@ -51,7 +51,7 @@ export default function TeacherHome() {
         <Stat label="This week" value={formatMoney(TEACHER_ME.earningsThisWeekCents)} icon={<IconCoin className="text-brand" />} />
         <Stat label="This month" value={formatMoney(TEACHER_ME.earningsThisMonthCents)} icon={<IconCoin className="text-accent" />} />
         <Stat label="Minutes taught" value={`${TEACHER_ME.minutesThisWeek}`} icon={<IconBolt className="text-amber-500" />} />
-        <Stat label="Price" value={`$${TEACHER_ME.pricePerMin.toFixed(2)}/min`} icon={<IconStar className="text-brand" />} />
+        <Stat label="Price" value={`€${TEACHER_ME.pricePerMin.toFixed(2)}/min`} icon={<IconStar className="text-brand" />} />
       </section>
 
       <section>
@@ -88,7 +88,7 @@ export default function TeacherHome() {
                   </div>
                 </div>
                 <div className="mt-3 flex items-center justify-between text-xs">
-                  <span className="rounded-full bg-brand-soft text-brand px-2 py-0.5">Est. earn ${(r.budgetPerMin * 20).toFixed(2)} (20 min)</span>
+                  <span className="rounded-full bg-brand-soft text-brand px-2 py-0.5">Est. earn €{(r.budgetPerMin * 20).toFixed(2)} (20 min)</span>
                 </div>
                 <div className="mt-3 flex gap-2">
                   <button onClick={() => decline(r.id)} className="flex-1 rounded-full border border-border py-2 text-sm font-medium inline-flex items-center justify-center gap-1">

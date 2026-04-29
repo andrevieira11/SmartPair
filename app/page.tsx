@@ -78,9 +78,9 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Plans that scale with exam season</h2>
           <p className="mt-3 text-zinc-600 dark:text-zinc-300">Start free, upgrade before your finals. Cancel anytime.</p>
           <div className="mt-8 grid sm:grid-cols-3 gap-4">
-            <PlanCard name="Free" price="$0" tag="Always free" perks={["15 free minutes / day", "Notes & past exams", "Community chats"]} />
-            <PlanCard name="Plus" price="$9.9" tag="Most popular" highlight perks={["60 free minutes / day", "Priority matching (<30s)", "Double rewards points"]} />
-            <PlanCard name="Pro" price="$19.9" tag="For exam weeks" perks={["3h of free classes / day", "Instant match, top tutors", "Unlimited during exams"]} />
+            <PlanCard name="Free" price="€0" tag="Always free" perks={["15 free minutes / day", "Notes & past exams", "Community chats"]} />
+            <PlanCard name="Plus" price="€9.90" tag="Most popular" highlight perks={["60 free minutes / day", "Priority matching (<30s)", "Double rewards points"]} />
+            <PlanCard name="Pro" price="€19.90" tag="For exam weeks" perks={["3h of free classes / day", "Instant match, top tutors", "Unlimited during exams"]} />
           </div>
           <div className="mt-8">
             <Link href="/role" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium">

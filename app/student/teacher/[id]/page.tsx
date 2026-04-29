@@ -38,7 +38,7 @@ export default async function TeacherDetail({
           <div className="mt-2 inline-flex items-center gap-3 text-sm">
             <span className="inline-flex items-center gap-1"><IconStar size={14} className="text-amber-500" /> {t.rating} ({t.reviews} reviews)</span>
             <span>•</span>
-            <span>${t.pricePerMin.toFixed(2)}/min</span>
+            <span>€{t.pricePerMin.toFixed(2)}/min</span>
           </div>
           <p className="mt-4 text-zinc-700 dark:text-zinc-200">{t.bio}</p>
           <div className="mt-5 flex flex-col sm:flex-row gap-2">

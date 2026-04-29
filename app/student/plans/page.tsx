@@ -19,7 +19,7 @@ export default function PlansPage() {
                 {p.highlight && <span className="text-xs px-2 py-0.5 rounded-full bg-background/15">Most popular</span>}
               </div>
               <div className="mt-2 text-4xl font-bold">
-                ${p.priceMonthly.toFixed(p.priceMonthly % 1 === 0 ? 0 : 2)}
+                €{p.priceMonthly.toFixed(p.priceMonthly % 1 === 0 ? 0 : 2)}
                 <span className={`text-base font-medium ${p.highlight ? "opacity-70" : "text-zinc-500"}`}>/mo</span>
               </div>
               <div className={`mt-1 text-sm ${p.highlight ? "opacity-80" : "text-zinc-600 dark:text-zinc-300"}`}>

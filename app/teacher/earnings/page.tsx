@@ -32,7 +32,7 @@ export default function EarningsPage() {
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <Stat label="This week" value={formatMoney(TEACHER_ME.earningsThisWeekCents)} icon={<IconCoin className="text-brand" />} />
         <Stat label="This month" value={formatMoney(TEACHER_ME.earningsThisMonthCents)} icon={<IconCoin className="text-accent" />} />
-        <Stat label="Avg / class" value="$6.10" icon={<IconCoin className="text-amber-500" />} />
+        <Stat label="Avg / class" value="€6.10" icon={<IconCoin className="text-amber-500" />} />
         <Stat label="Rating" value={`${TEACHER_ME.rating} ★`} icon={<IconStar className="text-amber-500" />} />
       </section>
 
@@ -46,7 +46,7 @@ export default function EarningsPage() {
             const h = Math.max(6, Math.round((d.cents / max) * 100));
             return (
               <div key={d.d} className="flex-1 flex flex-col items-center gap-2">
-                <div className="w-full rounded-t-md bg-brand-gradient" style={{ height: `${h}%` }} title={`$${(d.cents / 100).toFixed(2)}`} />
+                <div className="w-full rounded-t-md bg-brand-gradient" style={{ height: `${h}%` }} title={`€${(d.cents / 100).toFixed(2)}`} />
                 <div className="text-[11px] text-zinc-500">{d.d}</div>
               </div>
             );

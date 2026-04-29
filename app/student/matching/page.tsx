@@ -75,7 +75,7 @@ function MatchingInner() {
             <div className="text-left flex-1">
               <div className="font-semibold">{target.name}</div>
               <div className="text-xs opacity-80 inline-flex items-center gap-1">
-                <IconStar size={12} /> {target.rating} · ${target.pricePerMin.toFixed(2)}/min
+                <IconStar size={12} /> {target.rating} · €{target.pricePerMin.toFixed(2)}/min
               </div>
             </div>
           </div>

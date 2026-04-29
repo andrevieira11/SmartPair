@@ -12,7 +12,7 @@ export default function TeacherProfile() {
           <h1 className="text-2xl font-bold tracking-tight">{TEACHER_ME.name}</h1>
           <div className="text-sm text-zinc-500">Tutor · {TEACHER_ME.subjects.join(", ")}</div>
           <div className="mt-1 text-sm inline-flex items-center gap-1">
-            <IconStar size={14} className="text-amber-500" /> {TEACHER_ME.rating} ({TEACHER_ME.reviews} reviews) · ${TEACHER_ME.pricePerMin.toFixed(2)}/min
+            <IconStar size={14} className="text-amber-500" /> {TEACHER_ME.rating} ({TEACHER_ME.reviews} reviews) · €{TEACHER_ME.pricePerMin.toFixed(2)}/min
           </div>
         </div>
       </section>
@@ -20,7 +20,7 @@ export default function TeacherProfile() {
       <section className="grid sm:grid-cols-2 gap-3">
         <RowLink href="/teacher/earnings" label="Earnings & payouts" hint="Weekly bank transfer" />
         <RowLink href="#" label="Availability hours" hint="Mon–Fri 18:00–23:00" />
-        <RowLink href="#" label="Pricing & subjects" hint={`$${TEACHER_ME.pricePerMin.toFixed(2)}/min · ${TEACHER_ME.subjects.join(", ")}`} />
+        <RowLink href="#" label="Pricing & subjects" hint={`€${TEACHER_ME.pricePerMin.toFixed(2)}/min · ${TEACHER_ME.subjects.join(", ")}`} />
         <RowLink href="#" label="Verification" hint="ID & background check — verified" />
         <RowLink href="/role" label="Switch role" hint="Tutor ↔ Student" />
         <RowLink href="/" label="Sign out (demo)" hint="" />
