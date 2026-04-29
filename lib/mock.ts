@@ -310,6 +310,71 @@ export function formatMoney(cents: number): string {
   return `€${(cents / 100).toFixed(2)}`;
 }
 
+// ===== Demo earnings model =====
+// 10s class = €50 gross. 35% commission to SmartPair.
+export const DEMO_GROSS_CENTS_PER_SEC = 500; // 5€/s gross
+export const SMARTPAIR_COMMISSION_PCT = 0.35;
+
+export function computePayout(durationSec: number) {
+  const grossCents = Math.max(0, Math.round(durationSec * DEMO_GROSS_CENTS_PER_SEC));
+  const commissionCents = Math.round(grossCents * SMARTPAIR_COMMISSION_PCT);
+  const netCents = grossCents - commissionCents;
+  return { grossCents, commissionCents, netCents };
+}
+
+export type StoredPayout = {
+  id: string;
+  studentName: string;
+  studentAvatar: string;
+  subject: string;
+  topic: string;
+  durationSec: number;
+  grossCents: number;
+  commissionCents: number;
+  netCents: number;
+  createdAt: number; // unix ms
+};
+
+const STORAGE_KEY = "sp_recent_payouts_v1";
+const TTL_MS = 24 * 60 * 60 * 1000; // 24h
+
+export function loadRecentPayouts(): StoredPayout[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed: StoredPayout[] = JSON.parse(raw);
+    const now = Date.now();
+    const fresh = parsed.filter((p) => now - p.createdAt < TTL_MS);
+    if (fresh.length !== parsed.length) {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(fresh));
+    }
+    return fresh.sort((a, b) => b.createdAt - a.createdAt);
+  } catch {
+    return [];
+  }
+}
+
+export function savePayout(p: StoredPayout) {
+  if (typeof window === "undefined") return;
+  try {
+    const list = loadRecentPayouts();
+    list.unshift(p);
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(list.slice(0, 50)));
+  } catch {
+    /* ignore */
+  }
+}
+
+export function clearRecentPayouts() {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(STORAGE_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
 export function formatMinutes(m: number): string {
   if (m < 60) return `${m} min`;
   const h = Math.floor(m / 60);
