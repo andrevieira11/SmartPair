@@ -37,7 +37,7 @@ function StudentSessionInner({ params }: { params: Promise<{ id: string }> }) {
 
   const mm = String(Math.floor(secs / 60)).padStart(2, "0");
   const ss = String(secs % 60).padStart(2, "0");
-  // Estudante plan: 45 min included per lesson, then €0.30/min × 0.85 (15% disc).
+  // Student plan: 45 min included per lesson, then €0.30/min × 0.85 (15% off).
   const INCLUDED_MIN = 45;
   const EXTRA_RATE = 0.3 * 0.85;
   const usedFree = Math.min(secs, INCLUDED_MIN * 60);
@@ -123,7 +123,7 @@ function StudentSessionInner({ params }: { params: Promise<{ id: string }> }) {
 
         {/* Cost hud */}
         <div className="absolute top-3 right-3 bg-black/60 backdrop-blur rounded-xl px-3 py-2 text-xs text-right">
-          <div>Incluído: <b>{Math.max(0, INCLUDED_MIN - Math.floor(secs / 60))} min</b></div>
+          <div>Included: <b>{Math.max(0, INCLUDED_MIN - Math.floor(secs / 60))} min</b></div>
           <div className="opacity-80">Billed: €{(costCents / 100).toFixed(2)}</div>
         </div>
       </div>

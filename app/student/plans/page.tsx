@@ -35,8 +35,8 @@ export default function PlansPage() {
               </div>
 
               <div className="mt-2">
-                <span className="text-3xl font-bold">€{p.priceMonthly.toFixed(2).replace(".", ",")}</span>
-                <span className={`text-sm font-medium ${p.highlight ? "opacity-70" : "text-zinc-500"}`}>/mês</span>
+                <span className="text-3xl font-bold">€{p.priceMonthly.toFixed(2)}</span>
+                <span className={`text-sm font-medium ${p.highlight ? "opacity-70" : "text-zinc-500"}`}>/mo</span>
               </div>
 
               <div className={`mt-3 text-xs ${p.highlight ? "opacity-80" : "text-zinc-600 dark:text-zinc-300"}`}>
@@ -61,7 +61,7 @@ export default function PlansPage() {
               </ul>
 
               <div className={`mt-5 text-[11px] italic ${p.highlight ? "opacity-80" : "text-zinc-500"}`}>
-                Ideal: {p.ideal}
+                Ideal for: {p.ideal}
               </div>
 
               <button
@@ -74,7 +74,7 @@ export default function PlansPage() {
                       : "bg-foreground text-background"
                 }`}
               >
-                {current ? "Plano atual" : p.priceMonthly === 0 ? "Mudar para Básico" : `Escolher ${p.name}`}
+                {current ? "Current plan" : p.priceMonthly === 0 ? "Switch to Basic" : `Choose ${p.name}`}
               </button>
             </div>
           );
@@ -82,12 +82,12 @@ export default function PlansPage() {
       </section>
 
       <section className="rounded-2xl bg-muted p-5 text-sm text-zinc-600 dark:text-zinc-300">
-        Cancela ou troca de plano a qualquer momento. Aulas mensais não acumulam para o mês seguinte.
+        Cancel or switch plans anytime. Monthly lessons don&apos;t roll over to the next month.
       </section>
     </div>
   );
 }
 
 function currentPlanName() {
-  return PLANS.find((p) => p.id === STUDENT.plan)?.name ?? "Básico";
+  return PLANS.find((p) => p.id === STUDENT.plan)?.name ?? "Basic";
 }

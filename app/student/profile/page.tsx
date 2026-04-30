@@ -14,13 +14,13 @@ export default function StudentProfile() {
           <div className="mt-2 flex flex-wrap gap-2 text-xs">
             <Chip icon={<IconFlame size={12} />} label={`${STUDENT.streakDays}-day streak`} />
             <Chip icon={<IconCoin size={12} />} label={`${STUDENT.points} points`} />
-            <Chip icon={<IconBolt size={12} />} label={`${STUDENT.lessonsLeftThisMonth}/${STUDENT.lessonsTotalThisMonth} aulas este mês`} />
+            <Chip icon={<IconBolt size={12} />} label={`${STUDENT.lessonsLeftThisMonth}/${STUDENT.lessonsTotalThisMonth} lessons this month`} />
           </div>
         </div>
       </section>
 
       <section className="grid sm:grid-cols-2 gap-3">
-        <RowLink href="/student/plans" label="Plans & billing" hint="Estudante · €9,99/mês" />
+        <RowLink href="/student/plans" label="Plans & billing" hint="Student · €9.99/mo" />
         <RowLink href="/student/rewards" label="Rewards & achievements" hint={`${STUDENT.points} pts`} />
         <RowLink href="/role" label="Switch role" hint="Student ↔ Teacher" />
         <RowLink href="/" label="Sign out (demo)" hint="" />

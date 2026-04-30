@@ -33,7 +33,7 @@ export default function StudentHome() {
           <div className="mt-1 text-3xl sm:text-4xl font-bold">Find a tutor in &lt;1 min</div>
           <div className="mt-4 flex items-center gap-3">
             <span className="inline-flex items-center gap-1 rounded-full bg-white/15 backdrop-blur px-3 py-1 text-sm">
-              <IconBolt size={14} /> {STUDENT.lessonsLeftThisMonth} aulas restantes este mês
+              <IconBolt size={14} /> {STUDENT.lessonsLeftThisMonth} lessons left this month
             </span>
             <span className="inline-flex items-center gap-1 rounded-full bg-white/15 backdrop-blur px-3 py-1 text-sm">
               <IconVideo size={14} /> Live 1:1 video
@@ -55,7 +55,7 @@ export default function StudentHome() {
           </div>
           <div className="mt-1 text-[11px] text-zinc-500">{STUDENT.xp}/{STUDENT.xpToNextLevel} XP</div>
         </StatCard>
-        <StatCard label="Plan" value="Estudante" icon={<IconBolt className="text-accent" />}>
+        <StatCard label="Plan" value="Student" icon={<IconBolt className="text-accent" />}>
           <Link href="/student/plans" className="text-xs text-brand font-medium">Manage →</Link>
         </StatCard>
       </section>
