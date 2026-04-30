@@ -37,9 +37,12 @@ function StudentSessionInner({ params }: { params: Promise<{ id: string }> }) {
 
   const mm = String(Math.floor(secs / 60)).padStart(2, "0");
   const ss = String(secs % 60).padStart(2, "0");
-  const usedFree = Math.min(secs, STUDENT.freeMinutesLeftToday * 60);
-  const billedSecs = Math.max(0, secs - STUDENT.freeMinutesLeftToday * 60);
-  const costCents = useMemo(() => Math.ceil(billedSecs / 60 * teacher.pricePerMin * 100), [billedSecs, teacher]);
+  // Estudante plan: 45 min included per lesson, then €0.30/min × 0.85 (15% disc).
+  const INCLUDED_MIN = 45;
+  const EXTRA_RATE = 0.3 * 0.85;
+  const usedFree = Math.min(secs, INCLUDED_MIN * 60);
+  const billedSecs = Math.max(0, secs - INCLUDED_MIN * 60);
+  const costCents = useMemo(() => Math.ceil(billedSecs / 60 * EXTRA_RATE * 100), [billedSecs]);
   const pointsEarned = Math.floor(secs / 60) * 10;
 
   if (ended) {
@@ -120,7 +123,7 @@ function StudentSessionInner({ params }: { params: Promise<{ id: string }> }) {
 
         {/* Cost hud */}
         <div className="absolute top-3 right-3 bg-black/60 backdrop-blur rounded-xl px-3 py-2 text-xs text-right">
-          <div>Free left: <b>{Math.max(0, STUDENT.freeMinutesLeftToday - Math.floor(secs / 60))} min</b></div>
+          <div>Incluído: <b>{Math.max(0, INCLUDED_MIN - Math.floor(secs / 60))} min</b></div>
           <div className="opacity-80">Billed: €{(costCents / 100).toFixed(2)}</div>
         </div>
       </div>

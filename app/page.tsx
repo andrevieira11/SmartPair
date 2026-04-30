@@ -77,10 +77,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto w-full px-5 sm:px-8 py-14 sm:py-20">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Plans that scale with exam season</h2>
           <p className="mt-3 text-zinc-600 dark:text-zinc-300">Start free, upgrade before your finals. Cancel anytime.</p>
-          <div className="mt-8 grid sm:grid-cols-3 gap-4">
-            <PlanCard name="Free" price="€0" tag="Always free" perks={["15 free minutes / day", "Notes & past exams", "Community chats"]} />
-            <PlanCard name="Plus" price="€9.90" tag="Most popular" highlight perks={["60 free minutes / day", "Priority matching (<30s)", "Double rewards points"]} />
-            <PlanCard name="Pro" price="€19.90" tag="For exam weeks" perks={["3h of free classes / day", "Instant match, top tutors", "Unlimited during exams"]} />
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <PlanCard name="Básico" price="€0" tag="Grátis" perks={["15 min experimentais/sem", "Explicadores disponíveis", "Extra €0,30/min"]} />
+            <PlanCard name="Estudante" price="€9,99" tag="Mais popular" highlight perks={["3 aulas/mês com especialista", "Até 45 min cada", "15% desconto extras"]} />
+            <PlanCard name="Pro" price="€24,99" tag="Para exames" perks={["3 aulas/mês prof. certificado", "Até 60 min · gravação", "25% desconto extras"]} />
+            <PlanCard name="Especial" price="€49,99" tag="Acompanhamento" perks={["5 aulas/mês prof. premium", "Até 90 min · gravação auto", "Relatório mensal"]} />
           </div>
           <div className="mt-8">
             <Link href="/role" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium">

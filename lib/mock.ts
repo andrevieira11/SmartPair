@@ -114,51 +114,87 @@ export const TEACHERS: Teacher[] = [
   },
 ];
 
+export type PlanId = "basico" | "estudante" | "pro" | "especial";
+
 export type Plan = {
-  id: "free" | "plus" | "pro";
+  id: PlanId;
   name: string;
+  tagline: string;
   priceMonthly: number;
-  freeMinutesPerDay: number;
+  tutorTier: string;
+  included: string;
   perks: string[];
+  ideal: string;
   highlight?: boolean;
 };
 
 export const PLANS: Plan[] = [
   {
-    id: "free",
-    name: "Free",
+    id: "basico",
+    name: "Básico",
+    tagline: "Grátis",
     priceMonthly: 0,
-    freeMinutesPerDay: 15,
+    tutorTier: "Explicadores disponíveis (estudantes -18 ou universitários)",
+    included: "15 min de aula experimental por semana",
     perks: [
-      "15 free minutes every day",
-      "Access to notes & past exams",
-      "Community chats",
+      "15 min experimentais / semana",
+      "Sem garantia de especialização",
+      "Minutos extra a €0,30/min",
+      "Acesso a notas e exames",
+      "Comunidades de estudo",
     ],
+    ideal: "Quem quer experimentar ou usa muito pouco",
   },
   {
-    id: "plus",
-    name: "Plus",
-    priceMonthly: 9.9,
-    freeMinutesPerDay: 60,
+    id: "estudante",
+    name: "Estudante",
+    tagline: "Mais popular",
+    priceMonthly: 9.99,
+    tutorTier: "Explicador especialista na matéria",
+    included: "3 aulas mensais · até 45 min cada",
     highlight: true,
     perks: [
-      "60 free minutes every day",
-      "Priority matching (<30s)",
-      "Double rewards points",
-      "All Free perks",
+      "3 aulas / mês com especialista",
+      "Até 45 min por aula",
+      "15% de desconto em aulas extra",
+      "Match prioritário",
+      "Tudo do plano Básico",
     ],
+    ideal: "Alunos com necessidades regulares e orçamento limitado",
   },
   {
     id: "pro",
     name: "Pro",
-    priceMonthly: 19.9,
-    freeMinutesPerDay: 180,
+    tagline: "Para exames",
+    priceMonthly: 24.99,
+    tutorTier: "Professor certificado",
+    included: "3 aulas mensais · até 60 min cada",
     perks: [
-      "3 hours of free classes every day",
-      "Instant match with top-rated tutors",
-      "Exam-week unlimited sessions",
-      "1:1 mentor weekly check-in",
+      "3 aulas / mês com professor certificado",
+      "Até 60 min por aula",
+      "25% de desconto em aulas extra",
+      "Match instantâneo (prioridade máxima)",
+      "Material de apoio incluído",
+      "Gravação da aula (opcional)",
     ],
+    ideal: "Preparação de exames ou dificuldades complexas",
+  },
+  {
+    id: "especial",
+    name: "Especial",
+    tagline: "Acompanhamento total",
+    priceMonthly: 49.99,
+    tutorTier: "Professor premium (rating > 4.7)",
+    included: "5 aulas mensais · até 90 min cada",
+    perks: [
+      "5 aulas / mês com professor premium",
+      "Até 90 min por aula",
+      "Match imediato — topo da fila",
+      "Plano de estudo personalizado",
+      "Gravação automática de todas as aulas",
+      "Relatório mensal de progresso",
+    ],
+    ideal: "Acompanhamento contínuo e metas ambiciosas",
   },
 ];
 
@@ -285,7 +321,9 @@ export const STUDENT = {
   xpToNextLevel: 2000,
   points: 1285,
   streakDays: 12,
-  plan: "plus" as const,
+  plan: "estudante" as PlanId,
+  lessonsLeftThisMonth: 2,
+  lessonsTotalThisMonth: 3,
   freeMinutesLeftToday: 42,
 };
 

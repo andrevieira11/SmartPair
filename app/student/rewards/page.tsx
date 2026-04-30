@@ -37,7 +37,7 @@ export default function RewardsPage() {
         <div className="grid sm:grid-cols-3 gap-3">
           <Redeem cost={500} title="+15 min free class" desc="Swap points for a free live tutor session." />
           <Redeem cost={1200} title="Unlock a past exam pack" desc="30 solved problems from recent exams." />
-          <Redeem cost={2500} title="1 month Plus" desc="60 free daily minutes, top-rated tutors." highlight />
+          <Redeem cost={2500} title="1 mês Estudante" desc="3 aulas/mês com especialista, até 45 min cada." highlight />
         </div>
       </section>
 
